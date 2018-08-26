@@ -9,7 +9,6 @@ import javax.xml.bind.Marshaller;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.StringWriter;
 
 /**
  * Created by k1 on 8/26/18.
@@ -31,12 +30,9 @@ public class InputFileTest {
     @Test
     public void testAthleteXmlBuilder() throws IOException, JAXBException {
         Athlete athlete = new Athlete("John Smith;12.61;5.00;9.22;1.50;60.39;16.43;21.60;2.60;35.81;5.25.72");
-        StringWriter sw = new StringWriter();
         JAXBContext jaxbContext = JAXBContext.newInstance(Athlete.class);
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        jaxbMarshaller.marshal(athlete, sw);
-        String xmlString = sw.toString();
-        System.out.println("xmlString = " + xmlString);
+        jaxbMarshaller.marshal(athlete, System.out);
     }
 }
