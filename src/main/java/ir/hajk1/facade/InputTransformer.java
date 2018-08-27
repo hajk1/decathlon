@@ -1,4 +1,4 @@
-package ir.hajk1.service;
+package ir.hajk1.facade;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,6 @@ import java.io.IOException;
  * Created by k1 on 8/27/18.
  * email:<k1.tehrani@gmail.com>
  */
-public interface InputParsable {
+public interface InputTransformer {
     String[] parse(BufferedReader buf) throws IOException;
 }
