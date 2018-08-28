@@ -1,12 +1,19 @@
 package ir.hajk1.model;
 
-import javax.xml.bind.annotation.*;
 import java.util.Arrays;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Created by k1 on 8/27/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <Entity class for Athlete object>
  */
+
 @XmlRootElement(name = "athlete")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 @XmlType(propOrder = {"name", "place", "totalScore", "results"})
@@ -19,16 +26,12 @@ public class Athlete implements Comparable<Athlete> {
     public Athlete() {
     }
 
-    public Athlete(String row) {
-        String[] rowSplitted = row.split(";");
-        name = rowSplitted[0];
-        for (int i = 1; i < rowSplitted.length - 1; i++) {
-            results[i - 1] = new Result(Event.values()[i - 1], Double.parseDouble(rowSplitted[i]));
-        }
-        String[] times = rowSplitted[rowSplitted.length - 1].split("\\.");
-        int minutes = Integer.parseInt(times[0]);
-        int seconds = (minutes * 60) + Short.parseShort(times[1]);
-        results[9] = new Result(Event.values()[9], Double.parseDouble(seconds + "." + times[2]));
+    /**
+     * This constructor is used to create an athlete using basic values
+     */
+    public Athlete(String name, Result[] result) {
+        this.name = name;
+        this.results = result;
     }
 
     @XmlAttribute(name = "name")

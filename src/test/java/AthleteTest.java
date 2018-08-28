@@ -1,3 +1,5 @@
+import ir.hajk1.facade.CSVTransformer;
+import ir.hajk1.facade.InputTransformer;
 import ir.hajk1.facade.OutputTransformer;
 import ir.hajk1.facade.XmlTransformer;
 import ir.hajk1.model.Athlete;
@@ -15,14 +17,16 @@ public class AthleteTest {
 
   @Test
   public void testAthleteBuilder() throws IOException {
-    Athlete athlete = new Athlete(
+    InputTransformer inputTransformer = new CSVTransformer();
+    Athlete athlete = inputTransformer.parseRow(
         "John Smith;12.61;5.00;9.22;1.50;60.39;16.43;21.60;2.60;35.81;5.25.72");
     assert athlete.getTotalScore().equals(4200);
   }
 
   @Test
   public void testAthleteXmlBuilder() throws IOException, JAXBException {
-    Athlete athlete = new Athlete(
+    InputTransformer inputTransformer = new CSVTransformer();
+    Athlete athlete = inputTransformer.parseRow(
         "John Smith;12.61;5.00;9.22;1.50;60.39;16.43;21.60;2.60;35.81;5.25.72");
     OutputTransformer outputTransformer = new XmlTransformer();
     outputTransformer

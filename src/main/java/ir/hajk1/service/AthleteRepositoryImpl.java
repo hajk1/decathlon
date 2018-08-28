@@ -9,16 +9,23 @@ import java.util.stream.Collectors;
 /**
  * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
  *
- * Description: <the description of the class for java doc by those that might use it, please use html if possible>
+ * Description: <This class is used to register the athletes and calculate the ranking places>
  */
 public class AthleteRepositoryImpl implements AthlteRepository {
 
   private AthleteListResult athleteListResult;
 
+  /**
+   * Used to register the athletes list which is imported initially
+   */
   public void register(List<Athlete> athleteList) {
     athleteListResult = new AthleteListResult(athleteList);
   }
 
+  /**
+   * This method is used to calculate places based on total score of each athlete
+   * It is mandatory to register the athletes before calling this method
+   */
   @Override
   public void calculateRanking() {
     List<Athlete> athleteList = athleteListResult.getAthleteList();
@@ -33,6 +40,10 @@ public class AthleteRepositoryImpl implements AthlteRepository {
     return athleteListResult;
   }
 
+  /**
+   * This method calculates exact string literal for placements based on the ranking of each athlete,
+   * it takes care of the shared places as well
+   */
   private String calculateSharedPlace(List<Integer> rankList, Integer totalScore) {
     int firstIndex = rankList.indexOf(totalScore), lastIndex = rankList.lastIndexOf(totalScore);
     if (firstIndex == lastIndex) {

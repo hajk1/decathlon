@@ -2,11 +2,14 @@ package ir.hajk1.model;
 
 import static ir.hajk1.model.EventType.FIELD;
 import static ir.hajk1.model.EventType.TRACK;
-import static ir.hajk1.model.Unit.*;
+import static ir.hajk1.model.Unit.CENTIMETER;
+import static ir.hajk1.model.Unit.METER;
+import static ir.hajk1.model.Unit.SECONDS;
 
 /**
- * Created by k1 on 8/25/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This class is used for holding Decathlon events scoring table>
  */
 public enum Event {
     TRACK_100M(25.4347d, 18d, 1.81d, TRACK, SECONDS),

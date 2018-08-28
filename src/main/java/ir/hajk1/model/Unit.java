@@ -1,8 +1,9 @@
 package ir.hajk1.model;
 
 /**
- * Created by k1 on 8/28/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This enum is used for holding measurement units of the event>
  */
 public enum Unit {
     CENTIMETER, METER, SECONDS

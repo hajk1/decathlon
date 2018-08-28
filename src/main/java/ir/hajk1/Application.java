@@ -14,8 +14,9 @@ import java.io.PrintStream;
 import javax.xml.bind.JAXBException;
 
 /**
- * Created by k1 on 8/26/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This class is used for main start of the application>
  */
 
 public class Application {

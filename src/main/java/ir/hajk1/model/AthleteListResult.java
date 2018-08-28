@@ -8,8 +8,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Created by k1 on 8/27/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This class is used for output marshalling purpose>
  */
 @XmlRootElement(name = "athleteList")
 @XmlAccessorType(XmlAccessType.PROPERTY)

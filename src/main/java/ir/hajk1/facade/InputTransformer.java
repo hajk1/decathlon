@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by k1 on 8/27/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This interface is used to dictate the structure of input transformation>
  */
 public interface InputTransformer {
 
     List<Athlete> unmarshal(BufferedReader buf) throws IOException;
+
+    Athlete parseRow(String row);
 }

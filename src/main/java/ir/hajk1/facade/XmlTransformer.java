@@ -1,15 +1,15 @@
 package ir.hajk1.facade;
 
 import ir.hajk1.model.AthleteListResult;
-
+import java.io.PrintStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import java.io.PrintStream;
 
 /**
- * Created by k1 on 8/27/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This class is used to marshal xml to the output stream>
  */
 public class XmlTransformer implements OutputTransformer {
     @Override

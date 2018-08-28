@@ -1,8 +1,9 @@
 package ir.hajk1.model;
 
 /**
- * Created by k1 on 8/25/18.
- * email:<k1.tehrani@gmail.com>
+ * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
+ *
+ * Description: <This class is used for holding type of the event>
  */
 public enum EventType {
     TRACK,FIELD
