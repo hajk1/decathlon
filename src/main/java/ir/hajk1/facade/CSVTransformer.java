@@ -1,5 +1,6 @@
 package ir.hajk1.facade;
 
+import ir.hajk1.model.Athlete;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,13 +11,19 @@ import java.util.List;
  * email:<k1.tehrani@gmail.com>
  */
 public class CSVTransformer implements InputTransformer {
-    public String[] parse(BufferedReader buf) throws IOException {
-        List<String> strings = new ArrayList<String>();
+
+  public List<Athlete> unmarshal(BufferedReader buf) throws IOException {
+    List<String> athleteRows = new ArrayList<String>();
         String line;
         while ((line = buf.readLine()) != null) {
-            strings.add(line);
+          athleteRows.add(line);
         }
-        return strings.toArray(new String[0]);
+    List<Athlete> athleteList = new ArrayList<>(athleteRows.size());
+    for (String row : athleteRows) {
+      athleteList.add(new Athlete(row));
+    }
+
+    return athleteList;
     }
 
 }

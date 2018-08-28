@@ -14,6 +14,7 @@ public class InputFileTest {
     public void testInputFile() throws IOException {
         InputTransformer inputParser = new CSVTransformer();
       assert inputParser
-          .parse(new BufferedReader(new FileReader("src/test/resources/results.csv"))).length == 7;
+          .unmarshal(new BufferedReader(new FileReader("src/test/resources/results.csv"))).size()
+          == 7;
     }
 }
