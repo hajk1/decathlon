@@ -3,6 +3,7 @@ package ir.hajk1.service;
 import ir.hajk1.exception.InitializationException;
 import ir.hajk1.model.Athlete;
 import ir.hajk1.model.AthleteListResult;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
  *
  * Description: <This class is used to register the athletes and calculate the ranking places>
  */
-public class AthleteRepositoryImpl implements AthlteRepository {
+public class AthleteManagerImpl implements AthlteManager {
 
   private AthleteListResult athleteListResult;
 

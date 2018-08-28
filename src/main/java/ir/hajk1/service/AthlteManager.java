@@ -3,6 +3,7 @@ package ir.hajk1.service;
 import ir.hajk1.exception.InitializationException;
 import ir.hajk1.model.Athlete;
 import ir.hajk1.model.AthleteListResult;
+
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  *
  * Description: <the description of the class for java doc by those that might use it, please use html if possible>
  */
-public interface AthlteRepository {
+public interface AthlteManager {
 
   void register(List<Athlete> athleteList);
 

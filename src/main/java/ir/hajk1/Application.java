@@ -1,18 +1,16 @@
 package ir.hajk1;
 
 import ir.hajk1.exception.InitializationException;
+import ir.hajk1.exception.InvalidFormatException;
 import ir.hajk1.facade.CSVTransformer;
 import ir.hajk1.facade.InputTransformer;
 import ir.hajk1.facade.OutputTransformer;
 import ir.hajk1.facade.XmlTransformer;
-import ir.hajk1.service.AthleteRepositoryImpl;
-import ir.hajk1.service.AthlteRepository;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintStream;
+import ir.hajk1.service.AthleteManagerImpl;
+import ir.hajk1.service.AthlteManager;
+
 import javax.xml.bind.JAXBException;
+import java.io.*;
 
 /**
  * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
@@ -24,19 +22,19 @@ public class Application {
 
   private final InputTransformer inputTransformer;
   private final OutputTransformer outputTransformer;
-  private final AthlteRepository athlteRepository;
+  private final AthlteManager athlteRepository;
 
   private Application(InputTransformer inputParser, OutputTransformer outputTransformer,
-      AthlteRepository athlteRepository) {
+                      AthlteManager athlteRepository) {
     this.inputTransformer = inputParser;
     this.outputTransformer = outputTransformer;
     this.athlteRepository = athlteRepository;
   }
 
   public static void main(String[] args)
-      throws IOException, JAXBException, InitializationException {
+          throws IOException, JAXBException, InitializationException, InvalidFormatException {
     Application application = new Application(new CSVTransformer(), new XmlTransformer(),
-        new AthleteRepositoryImpl());
+            new AthleteManagerImpl());
     if (args.length == 0) {
       System.out.println("Input file path is missing");
       System.exit(1);
@@ -65,7 +63,7 @@ public class Application {
     return outputTransformer;
   }
 
-  public AthlteRepository getAthlteRepository() {
+  public AthlteManager getAthlteRepository() {
     return athlteRepository;
   }
 

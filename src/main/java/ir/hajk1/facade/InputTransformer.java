@@ -1,6 +1,8 @@
 package ir.hajk1.facade;
 
+import ir.hajk1.exception.InvalidFormatException;
 import ir.hajk1.model.Athlete;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  */
 public interface InputTransformer {
 
-    List<Athlete> unmarshal(BufferedReader buf) throws IOException;
+    List<Athlete> unmarshal(BufferedReader buf) throws IOException, InvalidFormatException;
 
-    Athlete parseRow(String row);
+    Athlete parseRow(String row) throws InvalidFormatException;
 }
