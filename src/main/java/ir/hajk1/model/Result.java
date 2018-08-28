@@ -23,7 +23,7 @@ public class Result {
         this.event = event;
         this.score = score;
         setPoint(event.calculatePoint(event.getUnit().equals(Unit.CENTIMETER) ? score * 100 : score));
-        System.out.println("getEvent() = " + getEvent() + ",getPoints() = " + getPoints());
+//        System.out.println("getEvent() = " + getEvent() + ",getPoints() = " + getPoints());
     }
 
     public int getPoints() {
