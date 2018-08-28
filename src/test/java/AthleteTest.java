@@ -17,7 +17,7 @@ public class AthleteTest {
   public void testAthleteBuilder() throws IOException {
     Athlete athlete = new Athlete(
         "John Smith;12.61;5.00;9.22;1.50;60.39;16.43;21.60;2.60;35.81;5.25.72");
-    assert true;
+    assert athlete.getTotalScore().equals(4200);
   }
 
   @Test

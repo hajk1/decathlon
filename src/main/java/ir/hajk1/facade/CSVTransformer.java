@@ -13,7 +13,7 @@ import java.util.List;
 public class CSVTransformer implements InputTransformer {
 
   public List<Athlete> unmarshal(BufferedReader buf) throws IOException {
-    List<String> athleteRows = new ArrayList<String>();
+    List<String> athleteRows = new ArrayList<>();
         String line;
         while ((line = buf.readLine()) != null) {
           athleteRows.add(line);
