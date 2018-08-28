@@ -1,5 +1,6 @@
 package ir.hajk1.service;
 
+import ir.hajk1.exception.InitializationException;
 import ir.hajk1.model.Athlete;
 import ir.hajk1.model.AthleteListResult;
 import java.util.List;
@@ -13,7 +14,7 @@ public interface AthlteRepository {
 
   void register(List<Athlete> athleteList);
 
-  void calculateRanking();
+  void calculateRanking() throws InitializationException;
 
   AthleteListResult getAthleteResult();
 }

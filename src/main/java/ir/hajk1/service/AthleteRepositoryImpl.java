@@ -1,5 +1,6 @@
 package ir.hajk1.service;
 
+import ir.hajk1.exception.InitializationException;
 import ir.hajk1.model.Athlete;
 import ir.hajk1.model.AthleteListResult;
 import java.util.Collections;
@@ -27,7 +28,10 @@ public class AthleteRepositoryImpl implements AthlteRepository {
    * It is mandatory to register the athletes before calling this method
    */
   @Override
-  public void calculateRanking() {
+  public void calculateRanking() throws InitializationException {
+    if (athleteListResult == null) {
+      throw new InitializationException("athleteListResult is empty. try to register it first");
+    }
     List<Athlete> athleteList = athleteListResult.getAthleteList();
     Collections.sort(athleteList);
     List<Integer> rankList = athleteList.stream().map(Athlete::getTotalScore).collect(Collectors

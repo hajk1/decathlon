@@ -9,7 +9,7 @@ import static ir.hajk1.model.Unit.SECONDS;
 /**
  * Author: <a href="mailto:k1.tehrani@gmail.com">Kayvan Tehrani</a>
  *
- * Description: <This class is used for holding Decathlon events scoring table>
+ * Description: <This enum is used for holding Decathlon events scoring table>
  */
 public enum Event {
     TRACK_100M(25.4347d, 18d, 1.81d, TRACK, SECONDS),

@@ -1,5 +1,6 @@
 package ir.hajk1;
 
+import ir.hajk1.exception.InitializationException;
 import ir.hajk1.facade.CSVTransformer;
 import ir.hajk1.facade.InputTransformer;
 import ir.hajk1.facade.OutputTransformer;
@@ -32,7 +33,8 @@ public class Application {
     this.athlteRepository = athlteRepository;
   }
 
-  public static void main(String[] args) throws IOException, JAXBException {
+  public static void main(String[] args)
+      throws IOException, JAXBException, InitializationException {
     Application application = new Application(new CSVTransformer(), new XmlTransformer(),
         new AthleteRepositoryImpl());
     if (args.length == 0) {
