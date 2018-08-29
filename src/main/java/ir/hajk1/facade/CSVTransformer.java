@@ -1,10 +1,10 @@
 package ir.hajk1.facade;
 
+import ir.hajk1.TimeUtils;
 import ir.hajk1.exception.InvalidFormatException;
 import ir.hajk1.model.Athlete;
 import ir.hajk1.model.Event;
 import ir.hajk1.model.Result;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,10 +38,8 @@ public class CSVTransformer implements InputTransformer {
       for (int i = 1; i < rowSplitted.length - 1; i++) {
         results[i - 1] = new Result(Event.values()[i - 1], Double.parseDouble(rowSplitted[i]));
       }
-      String[] times = rowSplitted[rowSplitted.length - 1].split("\\.");
-      int minutes = Integer.parseInt(times[0]);
-      int seconds = (minutes * 60) + Short.parseShort(times[1]);
-      results[9] = new Result(Event.values()[9], Double.parseDouble(seconds + "." + times[2]));
+      results[9] = new Result(Event.values()[9],
+          TimeUtils.convertMinutesToSeconds(rowSplitted[rowSplitted.length - 1]));
       return new Athlete(name, results);
     } catch (Exception e) {
       throw new InvalidFormatException(e.getMessage());
